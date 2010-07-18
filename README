@@ -1,0 +1,60 @@
+
+================================================================================
+
+imgautorotate - automatically rotate jpg image guided by exif data
+
+DESCRIPTION
+    Uses exiftool to see if an image has orientation set to something. It
+    will use mogrify to alter the original images. Non jpeg files (regex)
+    are skipped. Any images we can't get info for are failures. The exit
+    code is how many failures we have. Skipped arguments are not deemed
+    failures.
+
+USAGE
+    imgautorotate [OPTIONS].. IMAGEFILE..
+
+       -h          help
+       -n          just show the shell commands
+       -v          version
+
+  USAGE EXAMPLES
+       imgautorotate ./images/*jpg
+
+SEE ALSO
+    exiftool mogrify
+
+AUTHOR
+    Leo Charre leocharre at cpan dot org
+
+LICENSE
+    This package is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself, i.e., under the terms of the
+    "Artistic License" or the "GNU General Public License".
+
+DISCLAIMER
+    This package is distributed in the hope that it will be useful, but
+    WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+    See the "GNU General Public License" for more details.
+
+
+--------------------------------------------------------------------------------
+
+
+
+REQUIRES
+
+Cwd: 3
+Getopt::Std::Strict: 1.01
+String::ShellQuote: 1.03
+Test::Simple: 0
+
+
+INSTALL
+
+   perl Makefile.PL
+   make install
+
+
+
